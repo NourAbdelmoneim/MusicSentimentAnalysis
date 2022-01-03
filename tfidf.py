@@ -4,8 +4,6 @@ import numpy as np
 import math
 import csv
 
-# done for each category in training set
-
 # songLyrics = an array of words in a song's lyrics
 # allSongLyrics = an array of len(songs) containing the lyrics of each song
 # allSongTitles = an array of song titles
