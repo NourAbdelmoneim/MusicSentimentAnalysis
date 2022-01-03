@@ -6,15 +6,11 @@ from sklearn.metrics import f1_score
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
-#from sklearn.metrics import plot_confusion_matrix
-#from sklearn.preprocessing import LabelEncoder
-
 
 import numpy as np 
-#import numpy.random as r
-#import random
-import matplotlib.pyplot as plt 
+import pandas as pd
 import math
+import pickle
 
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense
@@ -22,12 +18,8 @@ from tensorflow.keras import Model
 from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.layers import Dropout
 
-import pandas as pd
-
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
-import pickle
-
 
 #Loading and preprocessing data
 def preprocessData():
@@ -145,7 +137,7 @@ def displayCM(testingLabels, predictedLabels):
     
     plt.savefig('confusion_matrix.png')
 
-def main1():
+def main():
 
     print("loading data")
     trainingVectors, trainingLabels, testingVectors, testingLabels, n_features = loadData()
@@ -169,8 +161,6 @@ def main1():
     print("Recall: ", recall)
 
     displayCM(testingLabels, predictedLabels)
+    
 
-
-main1()
-
-#if __name__ == '__main__': sys.exit(main())
+if __name__ == '__main__': sys.exit(main())
